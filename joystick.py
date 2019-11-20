@@ -38,7 +38,7 @@ print(JoyAx)
 # Prints the values for axis0
 while True:
     print("running")
-    
+
     pygame.event.pump()
 
     forward_left  = -(pygame.joystick.Joystick(0).get_axis(1))
@@ -49,10 +49,11 @@ while True:
     on_right = (pygame.joystick.Joystick(0).get_button(5))
     on_left = (pygame.joystick.Joystick(0).get_button(4))
     l_trigger = (pygame.joystick.Joystick(0).get_axis(3))
-   
+
     msg = { "y" : forward_left,
             "x" : twist_left,
-            "twist" : twist_right
+            "twist" : twist_right,
+            "pitch" : forward_right,
          }
-    drive_pub.send(msg)   
+    drive_pub.send(msg)
     pygame.time.wait(100)
