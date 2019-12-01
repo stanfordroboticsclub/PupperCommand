@@ -54,7 +54,7 @@ while True:
             "x" : twist_left,
             "twist" : twist_right,
             "pitch" : forward_right,
-            "gait" : on_right,
+            "gait_toggle" : on_right,
          }
     drive_pub.send(msg)
     pygame.time.wait(100)
