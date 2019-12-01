@@ -10,3 +10,9 @@ sudo bash install.sh
 sudo systemctl start joystick
 sudo python3 joystick.py &
 ```
+
+## Debugging 
+To see if the controller is publishing to the Rover topic use: 
+```shell
+rover peek 8830
+```
