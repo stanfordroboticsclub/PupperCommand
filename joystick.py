@@ -50,11 +50,14 @@ while True:
     on_left = (pygame.joystick.Joystick(0).get_button(4))
     l_trigger = (pygame.joystick.Joystick(0).get_axis(3))
 
+    (d_pad_x, d_pad_y) = (pygame.joystick.Joystick(0).get_hat(0))
+
     msg = { "y" : forward_left,
             "x" : twist_left,
             "twist" : twist_right,
             "pitch" : forward_right,
             "gait_toggle" : on_right,
+            "stance_movement" : d_pad_y,
          }
     drive_pub.send(msg)
     pygame.time.wait(100)
