@@ -34,8 +34,8 @@ JoyAx = pygame.joystick.Joystick(0).get_numaxes()
 print("Number of axis:")
 print(JoyAx)
 
-
-# Prints the values for axis0
+## Configurable ##
+MESSAGE_RATE = 50
 while True:
     print("running")
 
@@ -59,6 +59,7 @@ while True:
             "gait_toggle" : on_right,
             "stance_movement" : d_pad_y,
             "roll_movement" : d_pad_x,
+            "message_rate" : MESSAGE_RATE
          }
     drive_pub.send(msg)
-    pygame.time.wait(20)
+    pygame.time.wait(1000 / MESSAGE_RATE)
