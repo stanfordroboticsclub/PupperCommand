@@ -61,4 +61,4 @@ while True:
             "roll_movement" : d_pad_x,
          }
     drive_pub.send(msg)
-    pygame.time.wait(100)
+    pygame.time.wait(20)
