@@ -58,6 +58,7 @@ while True:
             "pitch" : forward_right,
             "gait_toggle" : on_right,
             "stance_movement" : d_pad_y,
+            "roll_movement" : d_pad_x,
          }
     drive_pub.send(msg)
     pygame.time.wait(100)
