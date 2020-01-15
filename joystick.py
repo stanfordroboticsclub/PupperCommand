@@ -62,4 +62,6 @@ while True:
             "message_rate" : MESSAGE_RATE
          }
     drive_pub.send(msg)
-    pygame.time.wait(1000 / MESSAGE_RATE)
+
+    dt = int(1000 / MESSAGE_RATE)
+    pygame.time.wait(dt)
