@@ -4,6 +4,7 @@ Description=PS4 Joystick service
 #StopWhenUnneeded=true
 
 [Service]
+Type=idle
 ExecStartPre=/bin/hciconfig hciX up
 ExecStart=/usr/local/bin/ds4drv --config /home/robot/Rover/RoverCommand/ds4drv.config
 Restart=always
