@@ -11,7 +11,7 @@ sudo bash install.sh
 ```shell
 cd PupperCommand
 sudo systemctl start ds4drv
-python3 joystick.py
+sudo python3 joystick.py
 ```
 
 ## Debugging 
