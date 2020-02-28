@@ -17,8 +17,8 @@ while True:
     values = j.get_input()
     j.led_color(**PUPPER_COLOR)
 
-    forward_left  = - values['right_analog_y']
-    forward_right = - values['left_analog_y']
+    forward_left  = - values['left_analog_y']
+    forward_right = - values['right_analog_y']
     twist_right   =   values['right_analog_x']
     twist_left    =   values['left_analog_x']
 
