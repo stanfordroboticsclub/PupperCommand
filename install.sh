@@ -12,3 +12,5 @@ for file in *.service; do
 done
 
 sudo systemctl daemon-reload
+sudo systemctl enable joystick
+sudo systemctl start joystick
