@@ -1,4 +1,4 @@
-from UDPComms import Publisher, Subscriber
+from UDPComms import Publisher, Subscriber, timeout
 from PS4Joystick import Joystick
 
 import time
@@ -12,11 +12,11 @@ PUPPER_COLOR = {"red":0, "blue":0, "green":255}
 joystick_pub = Publisher(8830)
 joystick_subcriber = Subscriber(8840, timeout=0.01)
 joystick = Joystick()
+joystick.led_color(**PUPPER_COLOR)
 
 while True:
     print("running")
     values = joystick.get_input()
-    joystick.led_color(**PUPPER_COLOR)
 
     left_y = -values["left_analog_y"]
     right_y = -values["right_analog_y"]
@@ -58,8 +58,8 @@ while True:
 
     try:
         msg = joystick_subcriber.get()
-        joystick.led_color(msg["ps4_color"])
-    except TimeoutError:
+        joystick.led_color(**msg["ps4_color"])
+    except timeout:
         pass
 
     time.sleep(1 / MESSAGE_RATE)
